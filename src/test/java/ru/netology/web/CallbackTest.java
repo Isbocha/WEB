@@ -28,6 +28,7 @@ class CallbackTest {
         options.addArguments("--no-sandbox");
         options.addArguments("--headless");
         driver = new ChromeDriver(options);
+        driver.get("http://localhost:9999");
     }
 
     @AfterEach
@@ -38,7 +39,6 @@ class CallbackTest {
 
     @Test
     void shouldPositiveResultTest1() {
-        driver.get("http://localhost:9999");
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Петрова");
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+77771234567");
         driver.findElement(By.cssSelector("[data-test-id=agreement]")).click();
@@ -49,7 +49,6 @@ class CallbackTest {
 
     @Test
     void shouldPositiveResultTest2() {
-        driver.get("http://localhost:9999");
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Петрова-Сидорова");
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+77771234567");
         driver.findElement(By.cssSelector("[data-test-id=agreement]")).click();
@@ -60,7 +59,6 @@ class CallbackTest {
 
     @Test
     void shouldPositiveResultTest3() {
-        driver.get("http://localhost:9999");
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Петрова Сидорова");
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+77771234567");
         driver.findElement(By.cssSelector("[data-test-id=agreement]")).click();
@@ -71,7 +69,6 @@ class CallbackTest {
 
     @Test
     void shouldPositiveResultTest4() {
-        driver.get("http://localhost:9999");
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Петрова-Сидорова Клавдия");
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+77771234567");
         driver.findElement(By.cssSelector("[data-test-id=agreement]")).click();
@@ -82,7 +79,6 @@ class CallbackTest {
 
     @Test
     void shouldPositiveResultTest5() {
-        driver.get("http://localhost:9999");
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Петрова Сидорова Светлана");
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+77771234567");
         driver.findElement(By.cssSelector("[data-test-id=agreement]")).click();
@@ -93,7 +89,6 @@ class CallbackTest {
 
     @Test
     void shouldNegativeResultNameTest1() {
-        driver.get("http://localhost:9999");
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Petrova");
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+77771234567");
         driver.findElement(By.cssSelector("[data-test-id=agreement]")).click();
@@ -104,7 +99,6 @@ class CallbackTest {
 
     @Test
     void shouldNegativeResultNameTest2() {
-        driver.get("http://localhost:9999");
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("");
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+77771234567");
         driver.findElement(By.cssSelector("[data-test-id=agreement]")).click();
@@ -115,7 +109,6 @@ class CallbackTest {
 
     @Test
     void shouldNegativeResultNameTest3() {
-        driver.get("http://localhost:9999");
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("121321313");
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+77771234567");
         driver.findElement(By.cssSelector("[data-test-id=agreement]")).click();
@@ -126,7 +119,6 @@ class CallbackTest {
 
     @Test
     void shouldNegativeResultNameTest4() {
-        driver.get("http://localhost:9999");
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("&%&%&^");
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+77771234567");
         driver.findElement(By.cssSelector("[data-test-id=agreement]")).click();
@@ -137,7 +129,6 @@ class CallbackTest {
 
     @Test
     void shouldNegativeResultPhoneTest1() {
-        driver.get("http://localhost:9999");
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Петрова Оксана");
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+7");
         driver.findElement(By.cssSelector("[data-test-id=agreement]")).click();
@@ -148,7 +139,6 @@ class CallbackTest {
 
     @Test
     void shouldNegativeResultPhoneTest2() {
-        driver.get("http://localhost:9999");
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Петрова Оксана");
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+7777777777777777777");
         driver.findElement(By.cssSelector("[data-test-id=agreement]")).click();
@@ -159,7 +149,6 @@ class CallbackTest {
 
     @Test
     void shouldNegativeResultPhoneTest3() {
-        driver.get("http://localhost:9999");
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Петрова Оксана");
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("");
         driver.findElement(By.cssSelector("[data-test-id=agreement]")).click();
@@ -171,7 +160,6 @@ class CallbackTest {
 
     @Test
     void shouldNegativeResultNamePhoneTest5() {
-        driver.get("http://localhost:9999");
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("");
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("");
         driver.findElement(By.cssSelector("[data-test-id=agreement]")).click();
@@ -182,7 +170,6 @@ class CallbackTest {
 
     @Test
     void shouldNegativeResultTest() {
-        driver.get("http://localhost:9999");
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Петрова Оксана");
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+77771234567");
         driver.findElement(By.cssSelector("button")).click();
